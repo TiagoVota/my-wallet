@@ -7,8 +7,8 @@ import {
 	Login,
 	SignUp,
 	Homepage,
-	Entry,
-	Outflow,
+	NewEntry,
+	NewOutflow,
 } from './pages/index'
 
 
@@ -22,8 +22,8 @@ const PagesRoutes = () => {
 				<Route path='/auth/login' element={<Login />}/>
 				<Route path='/auth/sign-up' element={<SignUp />}/>
 				<Route path='/' element={<Homepage />}/>
-				<Route path='/transaction/entry' element={<Entry />}/>
-				<Route path='/transaction/outflow' element={<Outflow />}/>
+				<Route path='/transaction/entry' element={<NewEntry />}/>
+				<Route path='/transaction/outflow' element={<NewOutflow />}/>
 			</Routes>
 		</Router>
 	)

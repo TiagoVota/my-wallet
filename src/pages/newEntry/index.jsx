@@ -1,7 +1,7 @@
 import Container from '../../components/Container'
 
 
-const Outflow = () => {
+const NewEntry = () => {
 	return (
 		<Container>
 		</Container>
@@ -9,4 +9,4 @@ const Outflow = () => {
 }
 
 
-export default Outflow
+export default NewEntry
