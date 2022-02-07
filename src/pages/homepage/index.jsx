@@ -25,10 +25,10 @@ const Homepage = () => {
 				login({name: 'Fulano'})
 				
 				goLoginPage()
-			}).catch(({ request: { status }}) => handleFailLogin(status))
+			}).catch(({ request: { status }}) => handleFailLogout(status))
 	}
 
-	const handleFailLogin = (status) => {
+	const handleFailLogout = (status) => {
 		const msgStatus = {
 			401: 'Não autorizado! Logout não realizado!',
 			500: 'Erro nosso, tente novamente mais tarde, por favor 🥺'
