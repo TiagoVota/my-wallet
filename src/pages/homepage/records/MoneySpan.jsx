@@ -4,7 +4,6 @@ import { sanitizeMoney } from '../../../helpers/transactionsHelper'
 
 
 const MoneySpan = ({ children: value, isBalance }) => {
-	console.log({value})
 	return (
 		<MoneyText isBigText={isBalance} isProfit={value >= 0}>
 			{sanitizeMoney(value)}

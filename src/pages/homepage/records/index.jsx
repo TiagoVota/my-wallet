@@ -20,7 +20,6 @@ const Records = () => {
 			.then(({ data }) => {
 				setBalance(makeBalance(data))
 				setTransactions(data)
-				console.log({ balance: makeBalance(data)})
 			})
 			.catch(({ request: { status } }) => handleFailGetTransaction(status))
 	}, [token])
