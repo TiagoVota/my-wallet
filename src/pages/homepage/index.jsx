@@ -6,7 +6,7 @@ import useAuth from '../../hooks/useAuth'
 
 import Container from '../../components/Container'
 import Header from '../shared/Header'
-import Balance from './Balance'
+import Records from './records'
 import TransactionButtons from './TransactionButtons'
 
 
@@ -29,7 +29,7 @@ const Homepage = () => {
 				</ExitButton>
 			</Header>
 
-			<Balance />
+			<Records />
 
 			<TransactionButtons />
 		</Container>

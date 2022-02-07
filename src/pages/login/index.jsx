@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import useAuth from '../../hooks/useAuth'
 import { handleValidation } from '../../validations/handleValidation'
 import { errorModal, successModal } from '../../factories/modalFactory'
-import { postLogin } from '../../services/service.auth'
+import { postLogin } from '../../services/api.auth'
 
 import { loginSchema } from '../../schemas/userSchema'
 
