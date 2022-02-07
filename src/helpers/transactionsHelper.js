@@ -12,12 +12,12 @@ const sanitizeMoney = (value) => {
 
 const transactionPageInfo = (apiService, transactionType) => {
 	const services = {
-		'post': {
+		'POST': {
 			title: 'Nova',
 			button: 'Salvar',
 			success: 'adicionada!'
 		},
-		'put': {
+		'PUT': {
 			title: 'Editar',
 			button: 'Atualizar',
 			success: 'atualizada!'
@@ -25,11 +25,13 @@ const transactionPageInfo = (apiService, transactionType) => {
 	}
 	const types = {
 		'entry': {
+			title: 'entrada',
 			button: 'entrada',
 			placeholder: 'Salário',
 			success: 'Entrada'
 		},
 		'outflow': {
+			title: 'saída',
 			button: 'saída',
 			placeholder: 'Mercado',
 			success: 'Saída'
@@ -40,8 +42,18 @@ const transactionPageInfo = (apiService, transactionType) => {
 		titleText: `${services[apiService].title} ${types[transactionType].title}`,
 		buttonText: `${services[apiService].button} ${types[transactionType].button}`,
 		placeholderText: `Ex.: ${types[transactionType].placeholder}`,
-		successText: `${services[apiService].success} ${types[transactionType].success}`,
+		successText: `${types[transactionType].success} ${services[apiService].success}`,
 	}
+}
+
+
+const formatInputValue = value => Number(value.replace('-', '').replace(',', '.'))
+const formatTypeValue = (value, transactionType) => {
+	const valueDict = {
+		'entry': value,
+		'outflow': -1 * value,
+	}
+	return valueDict[transactionType]
 }
 
 
@@ -49,4 +61,6 @@ export {
 	makeBalance,
 	sanitizeMoney,
 	transactionPageInfo,
+	formatInputValue,
+	formatTypeValue,
 }

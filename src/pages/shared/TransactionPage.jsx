@@ -3,11 +3,16 @@ import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 import useAuth from '../../hooks/useAuth'
-import { transactionPageInfo } from '../../helpers/transactionsHelper'
+import {
+	formatInputValue,
+	formatTypeValue,
+	transactionPageInfo
+} from '../../helpers/transactionsHelper'
 import { transactionSchema } from '../../schemas/transactionSchema'
 import { handleValidation } from '../../validations/handleValidation'
 import { errorModal, successModal } from '../../factories/modalFactory'
 
+import Container from '../../components/Container'
 import Header from './Header'
 
 
@@ -31,17 +36,21 @@ const TransactionPage = (props) => {
 	const handleSubmit = (event) => {
 		event.preventDefault()
 
-		const formatValue = value => Number(value.replace(',', '.'))
-		
-		const body = {
+		const sanitizedData = {
 			...formData,
-			value: formatValue(formData.value),
+			value: formatInputValue(formData.value),
 		}
 
-		const {isValid, error} = handleValidation(body, transactionSchema)
+		const {isValid, error} = handleValidation(sanitizedData, transactionSchema)
 		if (!isValid) return errorModal(error)
 
-		submitTransaction({ ...body, token })
+		const body = {
+			...sanitizedData,
+			value: formatTypeValue(sanitizedData.value, transactionType),
+			token,
+		}
+
+		submitTransaction(body)
 			.then(() => {
 				successModal(successText)
 
@@ -74,12 +83,12 @@ const TransactionPage = (props) => {
 
 
 	return (
-		<>
-			<Header onClick={returnHomepage}>
+		<Container isTransactionPage>
+			<Header onClick={(returnHomepage)}>
 				{titleText}
 			</Header>
 
-			<Form onSubmit={handleSubmit}>
+			<form onSubmit={handleSubmit}>
 				<Label htmlFor='Valor'>Valor:</Label>
 				<Input
 					id='Valor'
@@ -103,18 +112,14 @@ const TransactionPage = (props) => {
 				<Button type='submit'>
 					{buttonText}
 				</Button>
-			</Form>
-		</>
+			</form>
+		</Container>
 	)
 }
 
 
 export default TransactionPage
 
-
-const Form = styled.form`
-	margin-top: 18px;
-`
 
 const Label = styled.label`
 	margin-left: 6%;

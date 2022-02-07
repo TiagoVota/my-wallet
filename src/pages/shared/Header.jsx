@@ -15,7 +15,7 @@ export default Header
 
 const Container = styled.header`
 	width: 100vw;
-	height: 12vw;
+	height: 12vh;
 	padding: 0 7vw;
 	display: flex;
 	justify-content: space-between;

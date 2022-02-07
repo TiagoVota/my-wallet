@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-const Container = ({ children }) => {
+const Container = ({ children, isTransactionPage }) => {
 	return (
-		<Box>
+		<Box isTransactionPage={isTransactionPage}>
 			{children}
 		</Box>
 	)
@@ -17,8 +17,8 @@ const Box = styled.div`
 	height: 100vh;
 	display: flex;
   flex-direction: column;
+  justify-content: ${p => p.isTransactionPage ? 'start' : 'center'};
   align-items: center;
-  justify-content: center;
 	background-color: #8C11BE;
 
 `

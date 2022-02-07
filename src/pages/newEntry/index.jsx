@@ -1,10 +1,16 @@
-import Container from '../../components/Container'
+import { sendTransaction } from '../../services/api.wallet'
+
+import TransactionPage from '../shared/TransactionPage'
 
 
 const NewEntry = () => {
+
 	return (
-		<Container>
-		</Container>
+		<TransactionPage
+			apiService={'POST'}
+			transactionType={'entry'}
+			submitTransaction={sendTransaction}
+		/>
 	)
 }
 
