@@ -4,8 +4,9 @@ const AuthContext = createContext()
 
 
 const AuthProvider = ({ children }) => {
+	const mockAuth = { name: 'Fulano' }
 	const persistedAuth = JSON.parse(localStorage.getItem('auth'))
-	const [auth, setAuth] = useState(persistedAuth)
+	const [auth, setAuth] = useState(persistedAuth || mockAuth)
 
 	const login = (authData) => {
 		setAuth(authData)

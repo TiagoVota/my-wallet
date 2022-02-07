@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
 
-const Header = ({ children }) => {
+const Header = ({ children, onClick }) => {
+	const handleClick = onClick || function () {return}
+	
 	return (
-		<Container>
+		<Container onClick={handleClick}>
 			{children}
 		</Container>
 	)

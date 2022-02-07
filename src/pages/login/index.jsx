@@ -48,7 +48,6 @@ const Login = () => {
 				login(userInfo)
 
 				navigate('/')
-
 			}).catch(({ request: { status }}) => handleFailLogin(status))
 	}
 

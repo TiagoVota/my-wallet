@@ -67,6 +67,7 @@ const TransactionPage = (props) => {
 
 	const handleFailSubmit = (status) => {
 		const msgStatus = {
+			401: 'Não autorizado! Tente fazer o login novamente 🥺',
 			422: 'Campo(s) inválido(s)!',
 			500: 'Erro nosso, tente novamente mais tarde, por favor 🥺'
 		}
