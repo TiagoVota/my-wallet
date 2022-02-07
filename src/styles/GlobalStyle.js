@@ -22,10 +22,11 @@ const GlobalStyle = createGlobalStyle`
 
 	button {
 		color: #FFFFFF;
+		background-color: #A328D6;
 	}
 
 	input {
-		color: #000000;
+	color: #000000;
 
 	::placeholder {
 		color: #575757;
