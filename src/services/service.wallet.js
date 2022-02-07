@@ -5,6 +5,11 @@ import BASE_URL from './baseUrl'
 import { makeConfig } from '../helpers/configHelper'
 
 
+const getBalance = (token) => {
+	return axios.get(`${BASE_URL}/transactions`, makeConfig(token))
+}
+
+
 const sendTransaction = ({ token, value, description }) => {
 	const body = { value, description }
 
@@ -12,12 +17,7 @@ const sendTransaction = ({ token, value, description }) => {
 }
 
 
-const getBalance = (token) => {
-	return axios.get(`${BASE_URL}/balance`, makeConfig(token))
-}
-
-
 export {
-	sendTransaction,
 	getBalance,
+	sendTransaction,
 }

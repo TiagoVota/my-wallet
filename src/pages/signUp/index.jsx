@@ -151,7 +151,6 @@ const Button = styled.button`
 	font-weight: bold;
 	font-size: 20px;
 	line-height: 23px;
-	color: #FFFFFF;
 `
 
 const RedirectP = styled.p`
