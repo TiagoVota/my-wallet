@@ -5,6 +5,7 @@ import { IoExitOutline } from 'react-icons/io5'
 import useAuth from '../../hooks/useAuth'
 import { makeLogout } from '../../services/api.auth'
 import { errorModal, successModal } from '../../factories/modalFactory'
+import { sanitizeUsername } from '../../helpers/userHelper'
 
 import Container from '../../components/Container'
 import Header from '../shared/Header'
@@ -20,10 +21,6 @@ const Homepage = () => {
 		makeLogout({ token })
 			.then(() => {
 				successModal('Logout realizado!')
-			
-				navigate('/auth/login')
-				login({name: 'Fulano'})
-				
 				goLoginPage()
 			}).catch(({ request: { status }}) => handleFailLogout(status))
 	}
@@ -47,7 +44,7 @@ const Homepage = () => {
 	return (
 		<Container>
 			<Header>
-				Olá, {name || 'Fulano'}
+				Olá, {sanitizeUsername(name) || 'Fulano'}
 
 				<ExitButton onClick={handleExit}>
 					<IoExitOutline size={'33px'} />

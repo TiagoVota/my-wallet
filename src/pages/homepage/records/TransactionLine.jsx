@@ -17,7 +17,7 @@ const TransactionLine = ({ info, setMakeDeletion }) => {
 
 	const pageType = Boolean(value >= 0) ? 'entry' : 'outflow'
 
-	
+
 	const redirectChangeTransaction = () => {
 		return navigate(`/transactions/${pageType}/edit/${transactionId}`)
 	}
@@ -56,7 +56,10 @@ const TransactionLine = ({ info, setMakeDeletion }) => {
 	return (
 		<Container>
 			<DescriptionBox onClick={redirectChangeTransaction}>
-				<DateSpan>{makeDate(date || Date.now())}</DateSpan>
+				<DateSpan>
+					{makeDate(date || Date.now())}
+				</DateSpan>
+				
 				{description}
 			</DescriptionBox>
 
