@@ -1,4 +1,4 @@
-import { useContext } from 'react/cjs/react.production.min'
+import { useContext } from 'react'
 
 import AuthContext from '../contexts/AuthContext'
 
