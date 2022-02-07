@@ -17,7 +17,15 @@ const sendTransaction = ({ token, value, description }) => {
 }
 
 
+const editTransaction = ({ token, transactionId, value, description }) => {
+	const body = { value, description }
+
+	return axios.put(`${BASE_URL}/transactions/${transactionId}`, body, makeConfig(token))
+}
+
+
 export {
 	getTransactions,
 	sendTransaction,
+	editTransaction,
 }

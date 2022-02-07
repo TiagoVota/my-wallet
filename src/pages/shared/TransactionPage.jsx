@@ -21,6 +21,7 @@ const TransactionPage = (props) => {
 		apiService,
 		transactionType,
 		submitTransaction,
+		transactionId,
 	} = props
 	const { auth: { token } } = useAuth()
 	const [formData, setFormData] = useState({})
@@ -48,6 +49,7 @@ const TransactionPage = (props) => {
 			...sanitizedData,
 			value: formatTypeValue(sanitizedData.value, transactionType),
 			token,
+			transactionId,
 		}
 
 		submitTransaction(body)

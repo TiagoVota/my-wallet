@@ -19,7 +19,7 @@ const Login = () => {
 	const [formData, setFormData] = useState({})
 
 	useEffect(() => {
-		if (auth & auth?.token) navigate('/')
+		if (auth & auth?.token) goHomepage()
 	}, [])
 
 	const changeFormData = (atribute, value) => {
@@ -43,11 +43,10 @@ const Login = () => {
 		postLogin(body)
 			.then(({ data: userInfo }) => {
 				successModal('Login realizado!')
-				clearForm()
 
 				login(userInfo)
-
-				navigate('/')
+				
+				goHomepage()
 			}).catch(({ request: { status }}) => handleFailLogin(status))
 	}
 
@@ -64,7 +63,11 @@ const Login = () => {
 		errorModal(msgToSend)
 	}
 
-	const clearForm = () => setFormData({})
+	const goHomepage = () => {
+		setFormData({})
+		navigate('/')
+	}
+
 
 
 	return (

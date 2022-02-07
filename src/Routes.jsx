@@ -9,6 +9,8 @@ import {
 	Homepage,
 	NewEntry,
 	NewOutflow,
+	EditEntry,
+	EditOutflow,
 } from './pages/index'
 
 
@@ -22,8 +24,10 @@ const PagesRoutes = () => {
 				<Route path='/auth/login' element={<Login />}/>
 				<Route path='/auth/sign-up' element={<SignUp />}/>
 				<Route path='/' element={<Homepage />}/>
-				<Route path='/transaction/entry' element={<NewEntry />}/>
-				<Route path='/transaction/outflow' element={<NewOutflow />}/>
+				<Route path='/transactions/entry' element={<NewEntry />}/>
+				<Route path='/transactions/outflow' element={<NewOutflow />}/>
+				<Route path='/transactions/entry/edit/:transactionId' element={<EditEntry />}/>
+				<Route path='/transactions/outflow/edit/:transactionId' element={<EditOutflow />}/>
 			</Routes>
 		</Router>
 	)
