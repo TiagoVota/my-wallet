@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-import BASE_URL from './baseUrl'
-
 import { makeConfig } from '../helpers/configHelper'
+
+import BASE_URL from './baseUrl'
 
 
 const getTransactions = ({ token }) => {

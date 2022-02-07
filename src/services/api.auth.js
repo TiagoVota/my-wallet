@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+import { makeConfig } from '../helpers/configHelper'
+
 import BASE_URL from './baseUrl'
 
 
@@ -11,6 +13,7 @@ const postLogin = ({ email, password }) => {
 	return axios.post(`${AUTH_URL}/login`, body)
 }
 
+
 const postSignUp = ({ name, email, password, repeatPassword }) => {
 	const body = { name, email, password, repeatPassword }
 
@@ -18,7 +21,13 @@ const postSignUp = ({ name, email, password, repeatPassword }) => {
 }
 
 
+const makeLogout = ({ token }) => {
+	return axios.delete(`${AUTH_URL}/logout`, makeConfig(token))
+}
+
+
 export {
 	postLogin,
 	postSignUp,
+	makeLogout,
 }
