@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { makeDate } from '../../../services/dayjsService'
@@ -6,11 +7,18 @@ import MoneySpan from './MoneySpan'
 
 
 const TransactionLine = ({ info }) => {
-	const { date, description, value } = info
+	const { date, description, value, _id: transactionId } = info
+	const navigate = useNavigate()
+	const pageType = Boolean(value >= 0) ? 'entry' : 'outflow'
 
+	const redirectChangeTransaction = () => {
+		return navigate(`/transactions/${pageType}/edit/${transactionId}`)
+	}
+
+	
 	return (
 		<Container>
-			<DescriptionBox>
+			<DescriptionBox onClick={redirectChangeTransaction}>
 				<DateSpan>{makeDate(date || Date.now())}</DateSpan>
 				{description}
 			</DescriptionBox>

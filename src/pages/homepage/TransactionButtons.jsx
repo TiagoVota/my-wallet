@@ -6,7 +6,7 @@ import { IoAddCircleOutline, IoRemoveCircleOutline } from 'react-icons/io5'
 const TransactionButtons = () => {
 	const navigate = useNavigate()
 
-	const handleClick = (route) => navigate(`/transaction/${route}`)
+	const handleClick = (pageType) => navigate(`/transactions/${pageType}`)
 
 	
 	return (
