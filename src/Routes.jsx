@@ -22,8 +22,8 @@ const PagesRoutes = () => {
 				<Route path='/auth/login' element={<Login />}/>
 				<Route path='/auth/sign-up' element={<SignUp />}/>
 				<Route path='/' element={<Homepage />}/>
-				<Route path='/movement/entry' element={<Entry />}/>
-				<Route path='/movement/outflow' element={<Outflow />}/>
+				<Route path='/transaction/entry' element={<Entry />}/>
+				<Route path='/transaction/outflow' element={<Outflow />}/>
 			</Routes>
 		</Router>
 	)

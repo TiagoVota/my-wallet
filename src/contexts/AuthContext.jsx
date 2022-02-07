@@ -4,7 +4,7 @@ const AuthContext = createContext()
 
 
 const AuthProvider = ({ children }) => {
-	const persistedAuth = localStorage.getItem('auth')
+	const persistedAuth = JSON.parse(localStorage.getItem('auth'))
 	const [auth, setAuth] = useState(persistedAuth)
 
 	const login = (authData) => {

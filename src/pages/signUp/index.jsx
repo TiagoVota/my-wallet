@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import { handleValidation } from '../../validations/handleValidation'
 import { errorModal, successModal } from '../../factories/modalFactory'
-import { postSignUp } from '../../services/service.auth'
+import { postSignUp } from '../../services/api.auth'
 
 import { signUpSchema } from '../../schemas/userSchema'
 
@@ -151,7 +151,6 @@ const Button = styled.button`
 	font-weight: bold;
 	font-size: 20px;
 	line-height: 23px;
-	color: #FFFFFF;
 `
 
 const RedirectP = styled.p`
