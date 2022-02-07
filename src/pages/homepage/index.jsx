@@ -16,7 +16,7 @@ const Homepage = () => {
 
 	const handleExit = () => {
 		navigate('/auth/login')
-		login({})
+		login({name: 'Fulano'})
 	}
 
 	return (

@@ -39,6 +39,10 @@
 		"no-unused-vars": "off",
 		"react/prop-types": "off",
 		"no-extra-boolean-cast": "off"
-
-	}
+	},
+	"settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

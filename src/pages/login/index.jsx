@@ -37,8 +37,8 @@ const Login = () => {
 			password: formData.password
 		}
 		
-		const loginValidation = handleValidation(body, loginSchema)
-		if (!loginValidation.isValid) return errorModal(loginValidation.error)
+		const {isValid, error} = handleValidation(body, loginSchema)
+		if (!isValid) return errorModal(error)
 
 		postLogin(body)
 			.then(({ data: userInfo }) => {
@@ -48,7 +48,6 @@ const Login = () => {
 				login(userInfo)
 
 				navigate('/')
-
 			}).catch(({ request: { status }}) => handleFailLogin(status))
 	}
 
@@ -111,15 +110,15 @@ const Login = () => {
 export default Login
 
 
+const Form = styled.form`
+	margin: 25px 0;
+`
+
 const Label = styled.label`
 	margin-left: 6%;
 	font-size: 20px;
 	line-height: 24px;
 	color: #FFFFFF;
-`
-
-const Form = styled.form`
-	margin: 25px 0;
 `
 
 const Input = styled.input`
