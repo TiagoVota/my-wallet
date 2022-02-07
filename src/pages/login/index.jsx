@@ -125,8 +125,7 @@ const Form = styled.form`
 const Input = styled.input`
 	width: 88%;
 	height: 58px;
-	margin-left: 6%;
-	margin-bottom: 13px;
+	margin: 0 6vw 4px;
 	padding-left: 13px;
 	font-size: 20px;
 	background: #FFFFFF;
@@ -137,9 +136,7 @@ const Input = styled.input`
 const Button = styled.button`
 	width: 88%;
 	height: 46px;
-	margin-left: 6%;
-	margin-bottom: 10px;
-	background: #A328D6;
+	margin: 15px 6vw;
 	border-radius: 5px;
 	font-weight: bold;
 	font-size: 20px;

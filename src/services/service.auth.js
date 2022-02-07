@@ -3,16 +3,18 @@ import axios from 'axios'
 import BASE_URL from './baseUrl'
 
 
+const AUTH_URL = `${BASE_URL}/auth`
+
 const postLogin = ({ email, password }) => {
 	const body = { email, password }
 
-	return axios.post(`${BASE_URL}/login`, body)
+	return axios.post(`${AUTH_URL}/login`, body)
 }
 
 const postSignUp = ({ name, email, password, repeatPassword }) => {
 	const body = { name, email, password, repeatPassword }
 
-	return axios.post(`${BASE_URL}/sign-up`, body)
+	return axios.post(`${AUTH_URL}/sign-up`, body)
 }
 
 
