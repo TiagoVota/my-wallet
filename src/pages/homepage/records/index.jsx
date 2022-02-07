@@ -14,6 +14,7 @@ const Records = () => {
 	const { auth: { token } } = useAuth()
 	const [transactions, setTransactions] = useState([])
 	const [balance, setBalance] = useState(0)
+	const [makeDeletion, setMakeDeletion] = useState({})
 
 	useEffect(() => {
 		getTransactions({ token })
@@ -22,7 +23,7 @@ const Records = () => {
 				setTransactions(data)
 			})
 			.catch(({ request: { status } }) => handleFailGetTransaction(status))
-	}, [token])
+	}, [token, makeDeletion])
 
 	const handleFailGetTransaction = (status) => {
 		const msgStatus = {
@@ -51,7 +52,11 @@ const Records = () => {
 			<TransactionsBox>
 				{
 					transactions.map((transaction, index) => {
-						return <TransactionLine key={index} info={transaction} />
+						return <TransactionLine
+							key={index}
+							info={transaction}
+							setMakeDeletion={setMakeDeletion}
+						/>
 					})
 				}
 			</TransactionsBox>

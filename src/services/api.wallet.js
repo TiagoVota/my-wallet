@@ -5,22 +5,29 @@ import { makeConfig } from '../helpers/configHelper'
 import BASE_URL from './baseUrl'
 
 
+const TRANSACTIONS_URL = `${BASE_URL}/transactions`
+
 const getTransactions = ({ token }) => {
-	return axios.get(`${BASE_URL}/transactions`, makeConfig(token))
+	return axios.get(`${TRANSACTIONS_URL}`, makeConfig(token))
 }
 
 
 const sendTransaction = ({ token, value, description }) => {
 	const body = { value, description }
 
-	return axios.post(`${BASE_URL}/transactions`, body, makeConfig(token))
+	return axios.post(`${TRANSACTIONS_URL}`, body, makeConfig(token))
 }
 
 
 const editTransaction = ({ token, transactionId, value, description }) => {
 	const body = { value, description }
 
-	return axios.put(`${BASE_URL}/transactions/${transactionId}`, body, makeConfig(token))
+	return axios.put(`${TRANSACTIONS_URL}/${transactionId}`, body, makeConfig(token))
+}
+
+
+const deleteTransaction = ({ token, transactionId }) => {
+	return axios.delete(`${TRANSACTIONS_URL}/${transactionId}`, makeConfig(token))
 }
 
 
@@ -28,4 +35,5 @@ export {
 	getTransactions,
 	sendTransaction,
 	editTransaction,
+	deleteTransaction,
 }
