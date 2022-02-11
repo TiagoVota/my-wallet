@@ -1,9 +1,7 @@
-const { NODE_ENV } = process.env
+const { REACT_APP_API_BASE_URL } = process.env
 
 
-const BASE_URL = (NODE_ENV === 'production')
-	? 'http://localhost:4242'
-	: 'http://localhost:4242'
+const BASE_URL = REACT_APP_API_BASE_URL || 'http://localhost:4242'
 
 
 export default BASE_URL
