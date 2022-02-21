@@ -4,7 +4,7 @@ import { IoExitOutline } from 'react-icons/io5'
 
 import useAuth from '../../hooks/useAuth'
 import { makeLogout } from '../../services/api.auth'
-import { errorModal, successModal } from '../../factories/modalFactory'
+import { successModal } from '../../factories/modalFactory'
 import { sanitizeUsername } from '../../helpers/userHelper'
 
 import Container from '../../components/Container'
@@ -19,26 +19,15 @@ const Homepage = () => {
 
 	const handleExit = () => {
 		makeLogout({ token })
-			.then(() => {
+			.finally(() => {
 				successModal('Logout realizado!')
 				goLoginPage()
-			}).catch(({ request: { status }}) => handleFailLogout(status))
-	}
-
-	const handleFailLogout = (status) => {
-		const msgStatus = {
-			401: 'Não autorizado! Logout não realizado!',
-			500: 'Erro nosso, tente novamente mais tarde, por favor 🥺'
-		}
-
-		const msgToSend = msgStatus[status] || 'Problema com o servidor 🥺'
-
-		errorModal(msgToSend)
+			})
 	}
 
 	const goLoginPage = () => {
-		navigate('/auth/login')
-		login({name: 'Fulano'})
+		navigate('/login')
+		login({ name: 'Fulano' })
 	}
 
 	return (

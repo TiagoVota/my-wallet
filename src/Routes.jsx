@@ -6,7 +6,7 @@ import GlobalStyle from './styles/GlobalStyle'
 import {
 	Login,
 	SignUp,
-	Homepage,
+	Home,
 	NewEntry,
 	NewOutflow,
 	EditEntry,
@@ -21,9 +21,9 @@ const PagesRoutes = () => {
 			<GlobalStyle />
 
 			<Routes>
-				<Route path='/auth/login' element={<Login />}/>
-				<Route path='/auth/sign-up' element={<SignUp />}/>
-				<Route path='/' element={<Homepage />}/>
+				<Route path='/login' element={<Login />}/>
+				<Route path='/sign-up' element={<SignUp />}/>
+				<Route path='/' element={<Home />}/>
 				<Route path='/transactions/entry' element={<NewEntry />}/>
 				<Route path='/transactions/outflow' element={<NewOutflow />}/>
 				<Route path='/transactions/entry/edit/:transactionId' element={<EditEntry />}/>

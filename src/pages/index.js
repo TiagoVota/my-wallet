@@ -1,6 +1,6 @@
 import Login from './login'
 import SignUp from './signUp'
-import Homepage from './homepage'
+import Home from './home'
 import NewEntry from './newEntry'
 import NewOutflow from './newOutflow'
 import EditEntry from './editEntry'
@@ -10,7 +10,7 @@ import EditOutflow from './editOutflow'
 export {
 	Login,
 	SignUp,
-	Homepage,
+	Home,
 	NewEntry,
 	NewOutflow,
 	EditEntry,

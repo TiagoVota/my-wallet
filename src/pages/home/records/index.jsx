@@ -27,7 +27,7 @@ const Records = () => {
 
 	const handleFailGetTransaction = (status) => {
 		const msgStatus = {
-			401: 'Não autorizado! Tente fazer o login novamente 🥺',
+			401: 'Não autorizado! Tente fazer o <a href=\'/login\'>login</a> novamente 🥺',
 			500: 'Erro nosso, tente novamente mais tarde, por favor 🥺'
 		}
 

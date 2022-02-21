@@ -99,7 +99,7 @@ const Login = () => {
 				</Button>
 			</Form>
 
-			<Link to='/auth/sign-up'>
+			<Link to='/sign-up'>
 				<RedirectP>
 					Primeira vez? Cadastre-se!
 				</RedirectP>
