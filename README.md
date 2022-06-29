@@ -38,7 +38,7 @@ No My Wallet, após fazer sua conta, você poderá gerenciar totalmente sua vida
 		- [Instalando a API](#instalando-a-api)
 		- [Instalando o app](#instalando-o-app)
 		- [Inicializando o app](#inicializando-o-app)
-	- [👨🏼‍💻 Autores](#-autores)
+	- [👨🏼‍💻 Autor](#-autor)
 <!--te-->
 
 <br/>
@@ -96,7 +96,7 @@ npm start
 <br/>
 
 
-## 👨🏼‍💻 Autores
+## 👨🏼‍💻 Autor
 
 <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/56308226?v=4" width="100px;" alt="Foto de perfil Tiago Vota Cucco"/>
 
